@@ -207,7 +207,7 @@
         $md5ass	  = @md5_file("clients/assets.zip");
         $sizezip  = @filesize("clients/".$client."/config.zip");
         $sizeass  = @filesize("clients/assets.zip");
-		$echo1    =  "$masterversion<:>$md5user<:>".$md5zip."<>".$sizezip."<:>".$md5ass."<>".$sizeass."<br>".$realUser.'<:>'.strtoint(xorencode($sessid, $protectionKey)).'<br>'.$acesstoken.'<br>';
+		$usrsessions = "$masterversion<:>$md5user<:>".$md5zip."<>".$sizezip."<:>".$md5ass."<>".$sizeass."<br>".$realUser.'<:>'.strtoint(xorencode($sessid, $protectionKey)).'<br>'.$acesstoken.'<br>';
 
 		if($assetsfolder) {
         	$hash_md5    = str_replace("\\", "/",checkfiles('clients/'.$client.'/bin/').checkfiles('clients/'.$client.'/mods/').checkfiles('clients/'.$client.'/coremods/').checkfiles('clients/'.$client.'/natives/').checkfiles('clients/assets')).'<::>assets/indexes<:b:>assets/objects<:b:>assets/virtual<:b:>'.$client.'/bin<:b:>'.$client.'/mods<:b:>'.$client.'/coremods<:b:>'.$client.'/natives<:b:>';
@@ -215,7 +215,20 @@
         	$hash_md5    = str_replace("\\", "/",checkfiles('clients/'.$client.'/bin/').checkfiles('clients/'.$client.'/mods/').checkfiles('clients/'.$client.'/coremods/')).checkfiles('clients/'.$client.'/natives/').'<::>'.$client.'/bin<:b:>'.$client.'/mods<:b:>'.$client.'/coremods<:b:>'.$client.'/natives<:b:>';
         }
 
-        echo Security::encrypt($echo1.$hash_md5, $key1);
+        if($temp) {
+	        $filecashe = 'temp/'.$client;
+			if (file_exists($filecashe)) {
+				 $fp = fopen($filecashe, "r");
+				 $hash_md5 = fgets($fp);
+				 fclose($fp);
+			} else {
+				$fp = fopen($filecashe, "w");
+				fwrite($fp, $hash_md5);
+				fclose($fp);
+			}
+	    }
+
+        echo Security::encrypt($usrsessions.$hash_md5, $key1);
 
   
 	} else if($action == 'getpersonal') {

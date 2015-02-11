@@ -44,7 +44,6 @@
 	$protectionKey		= '1234567890'; 
 	$key1               = "1234567891234567";  //16 Character Key Ключ пост запросов
 	$key2               = "1234567891234567"; //16 Character  Key  Ключ пост запросов
-    $skinurl            = 'http://alexandrage.ssh22.net/site/MinecraftSkins/'; //Ссылка на скины для клиентов 1.7.9
     $checklauncher      = false; //Проверка хеша лаунчера
 	$md5launcherexe     = md5(@file_get_contents("launcher/fix.exe"));  // Сверяем MD5
 	$md5launcherjar     = md5(@file_get_contents("launcher/fix.jar"));  // Сверяем MD5
@@ -52,9 +51,11 @@
 	$assetsfolder       = false; //Скачивать assets из папки, или из архива (true=из папки false=из архива)
 
 //========================= Настройки ЛК =======================//	
-	
-	$uploaddirs         = 'MinecraftSkins';  //Папка скинов
-	$uploaddirp         = 'MinecraftCloaks'; //Папка плащей
+
+	$uploaddirs         = 'MinecraftSkin';  //Папка скинов
+	$uploaddirp         = 'MinecraftCloak'; //Папка плащей
+    $skinurl            = 'http://alexandrage.ru/site/'.$uploaddirs.'/'; //Ссылка на скины для клиентов 1.7.+
+    $capeurl            = 'http://alexandrage.ru/site/'.$uploaddirp.'/'; //Ссылка на плащи для клиентов 1.7.+
 	
 	$usePersonal 		=  true; //Использовать личный кабинет
 	$canUploadSkin		=  true; //Можно ли заливать скины
@@ -66,6 +67,9 @@
 	$canExchangeMoney   =  true; //Можно ли обменивать Realmoney -> IConomy
 	$canUseJobs			=  true; //Можно ли использовать работы
 	$usecheck			=  true; //Можно ли использовать регистрацию в лаунчере
+
+	$temp               =  true; //Использовать файлы хеширования для ускорение авторизации и снижение нагрузки на вебсервер.
+	                             //Удаляем файл хеша после обновления клиента на сервере!
 	
 	$cloakPrice			=  0;   //Цена плаща (В рублях)
 	$vipPrice			=  100;  //Цена випа (В руб/мес)
