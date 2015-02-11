@@ -22,7 +22,7 @@
 
 		if($user == $realUser)
 		{
-			$time = time()*1000;
+			$time = time();
             $base64 ='
 			{
 				"timestamp":"'.$time.'","profileId":"'.$md5.'","profileName":"'.$realUser.'","textures":

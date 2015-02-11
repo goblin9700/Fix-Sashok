@@ -9,7 +9,7 @@ $stmt->bindValue(':md5', $md5);
 $stmt->execute();
 $stmt->bindColumn('user', $realUser);
 $stmt->fetch();
-$time = time()*1000;
+$time = time();
 $base64 ='
 {
 	"timestamp":"'.$time.'","profileId":"'.$md5.'","profileName":"'.$realUser.'","textures":

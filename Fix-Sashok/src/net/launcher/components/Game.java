@@ -242,7 +242,7 @@ public class Game extends JFrame
 				}
 				
                 Frame.main.setVisible(false);
-				
+                GuardUtils.delete(new File(assets+"assets/skins"));
 				start.start();
 			} catch (Exception e) {}
 		}
