@@ -33,7 +33,7 @@
 					},
 					"CAPE":
 					{
-						"url":"'.$capeurl.$realUser.'$.png"
+						"url":"'.$capeurl.'?/'.$realUser.'$"
 					}
 				}
 			}';

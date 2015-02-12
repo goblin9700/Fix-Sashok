@@ -20,7 +20,7 @@ $base64 ='
 		},
 		"CAPE":
 		{
-			"url":"'.$capeurl.$realUser.'$.png"
+			"url":"'.$capeurl.'?/'.$realUser.'$"
 		}
 	}
 }';
