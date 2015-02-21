@@ -52,8 +52,8 @@
 
 //========================= Настройки ЛК =======================//	
 
-	$uploaddirs         = 'MinecraftSkin';  //Папка скинов
-	$uploaddirp         = 'MinecraftCloak'; //Папка плащей
+	$uploaddirs         = 'MinecraftSkins';  //Папка скинов
+	$uploaddirp         = 'MinecraftCloaks'; //Папка плащей
     $skinurl            = 'http://alexandrage.ru/site/'.$uploaddirs.'/'; //Ссылка на скины для клиентов 1.7.+
     $capeurl            = 'http://alexandrage.ru/site/'.$uploaddirp.'/'; //Ссылка на плащи для клиентов 1.7.+
 	
