@@ -15,7 +15,7 @@ elseif(strlen($mail) == 0){die("errorField");}
 
 if(!preg_match("/^[a-zA-Z0-9_-]+$/", $login)) die ("errorLoginSymbol");
 elseif(!preg_match("/^[a-zA-Z0-9_-]+$/", $password)) die ("passErrorSymbol");
-elseif (!preg_match("/^[0-9a-z_\-]+@[0-9a-z_\-^\.]+\.[a-z]{2,3}$/i", $mail)) die ("errorMail");
+elseif (!preg_match("/^[0-9a-z_\-.]+@[0-9a-z_\-^\.]+\.[a-z]{2,3}$/i", $mail)) die ("errorMail");
 if ((strlen($login) < 2) or (strlen($login) > 16)) die ("errorSmallLogin");
 if ((strlen($password) < 4) or (strlen($password) > 40)) die ("errorPassSmall");
 if($password != $password2) die("errorPassToPass");
