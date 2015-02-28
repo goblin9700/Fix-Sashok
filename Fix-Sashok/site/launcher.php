@@ -1,5 +1,5 @@
 <?php
-    header('Content-Type: text/html; charset=cp1251');
+    header('Content-Type: text/html; charset=utf-8');
 	define('INCLUDE_CHECK',true);
 	include("connect.php");
 	include_once("loger.php");
